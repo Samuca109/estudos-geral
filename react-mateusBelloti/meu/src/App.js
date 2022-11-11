@@ -1,5 +1,12 @@
 import './App.css';
-/**
+import OlaMundo from './components/olaMundo'
+import Teste from './components/componenteDois'
+import PropsUm from './components/propsUm';
+import PropsDois from './components/propsDois';
+import Fragmento from "./components/fragmentos";
+
+
+/*
  * Aqui em cima serve apenas para importar coisas
  * {} dentro de chaves se faz funçoes diretas de javascript e todas as estrutras tambem diretas
  * pode criar funçoes 
@@ -9,7 +16,7 @@ import './App.css';
  * No jsx se chama as situaçoes e nao se cria dentro delas,ou seja,cria em outros lugares e depois so as chama dentro do jsx
  */
 function App() {
-
+  const time = 'chelsea'
   const name = 'samuel'
   const novoNome = name.toUpperCase()
 
@@ -17,6 +24,12 @@ function App() {
     return a + b
   }
 
+  /*
+   * A primeira letra sempre tem que ser maiuscula para poder iniciar e tem que ser no aqui na exportaçao e na importaçao
+   * Sempre dentro de uma div
+   * No propsUm chamou a variavel do arquivo propsUm e trouxe pra esse so fez uma conexao das variaveis para mostrar o valor
+   * Na props cria la no outro arquivo o formato e so chama aqui por aqui para aparecer na tela
+   */
 
   return (
     <div className="App">
@@ -24,7 +37,13 @@ function App() {
      <p>Seja bem vindo {novoNome}</p>
      <p>Multiplicação: {2*12}</p>
      <p>Soma: {soma(10,20)}</p>
+     <OlaMundo />
+     <Teste />
+     <PropsUm time={time} />
+     <PropsDois pessoa="ronaldo" idade="18" pais="brasil" foto="https://via.placeholder.com/150"  />
+     <Fragmento />
     </div>
+
   );
 }
 
