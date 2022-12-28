@@ -1,11 +1,26 @@
 import { useState } from 'react';
 import './App.css';
+
+//Mais avançados
 import Evento from './components/evento'
 import Form from './components/form';
 import Condicional from './components/condicional';
 import OutraLista from './components/outraLista';
 import SeuNome from './components/seuNome';
 import Saudacao from './components/saudacao';
+import Icones from './components/icones';
+
+//Primeiros projetos
+import OlaMundo from './components/olaMundo'
+import Teste from './components/componenteDois'
+import PropsUm from './components/propsUm';
+import PropsDois from './components/propsDois';
+import Fragmento from "./components/fragmentos";
+
+// Aula sobre Links Links,começa onde fica o <Router>
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import Navegar from './components/paginas/navegacao';
+import PrimeiraPagina from './components/paginas/primeiraPagina';
 
 
 function App() {
@@ -27,6 +42,24 @@ function App() {
   return (
     <div className="App">
      <h1>Primeiro projeto </h1>
+     <p>Seja bem vindo {novoNome}</p>
+     <p>Multiplicação: {2*12}</p>
+     <p>Soma: {soma(10,20)}</p>
+     <br></br>
+      <hr></hr>
+     <OlaMundo />
+     <Teste />
+     <br></br>
+      <hr></hr>
+     <PropsUm time={time} />
+     <br></br>
+      <hr></hr>
+     <PropsDois pessoa="ronaldo" idade="18" pais="brasil" foto="https://via.placeholder.com/150"  />
+     <br></br>
+      <hr></hr>
+     <Fragmento />
+     <br></br>
+      <hr></hr>
       <Evento />
       <br>
       </br>
@@ -43,6 +76,19 @@ function App() {
       <hr></hr>
       <SeuNome setNome={setNome} />
       <Saudacao nome={nome} />
+      <br></br>
+      <hr></hr>
+      <Icones />
+      <br></br>
+      <hr></hr>
+      <Router>
+        <Navegar />
+        <Routes>
+          <Route path="/">
+            <PrimeiraPagina />
+          </Route>
+        </Routes>
+      </Router>
     </div>
 
   );
@@ -50,6 +96,9 @@ function App() {
 
 export default App;
 
+/** React Router
+ *  
+ */
 /* Primeiros arquivos de treino que sao colocados dentro da div
  *  <p>Seja bem vindo {novoNome}</p>
      <p>Multiplicação: {2*12}</p>
